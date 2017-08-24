@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">GuitarTunerApp</string>
 
+    <!--
+        Activity Strings
+    -->
     <string name="FrontPage">Tuner Page</string>
     <string name="RecordPage">Record</string>
     <string name="AddRecordPage">Add Recording</string>
@@ -9,5 +12,10 @@
     <string name="LyricsPage">Lyrics</string>
     <string name="AddLyricsPage">Add Lyrics</string>
 
-    
+    <!--
+        Placeholder Strings
+    -->
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+
 </resources>
