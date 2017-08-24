@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginPage" />
+        <activity android:name=".RecordPage" />
+        <activity android:name=".AddRecordPage" />
+        <activity android:name=".MetronomePage" />
+        <activity android:name=".LyricsPage" />
+        <activity android:name=".AddLyricsPage"></activity>
     </application>
 
 </manifest>
