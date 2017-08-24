@@ -17,5 +17,6 @@
     -->
     <string name="Username">Username</string>
     <string name="Password">Password</string>
+    <string name="logo">Logo</string>
 
 </resources>
