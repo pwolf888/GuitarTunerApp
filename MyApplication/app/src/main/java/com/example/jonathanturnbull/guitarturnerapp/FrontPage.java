@@ -12,12 +12,17 @@ import android.view.ViewGroup;
 
 public class FrontPage extends Fragment {
 
+    // Declaring variables
     View myView;
+
+    // Setting up the layout of the front page in the first fragment
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        // The view is the layout of my frontpage
         myView = inflater.inflate(R.layout.frontpage, container, false);
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return myView;
     }
 }

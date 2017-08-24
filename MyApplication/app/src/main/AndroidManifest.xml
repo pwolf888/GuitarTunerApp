@@ -17,9 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".FrontPage" />
-        <activity android:name=".RecordPage" />
         <activity android:name=".AddRecordPage" />
-        <activity android:name=".MetronomePage" />
         <activity android:name=".LyricsPage" />
         <activity android:name=".AddLyricsPage" />
         <activity

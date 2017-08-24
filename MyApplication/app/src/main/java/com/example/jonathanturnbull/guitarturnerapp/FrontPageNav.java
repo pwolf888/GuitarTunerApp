@@ -3,6 +3,7 @@ package com.example.jonathanturnbull.guitarturnerapp;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -80,13 +81,25 @@ public class FrontPageNav extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        // Fragment Manager
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
-        } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_manage) {
+        if (id == R.id.nav_FrontPage) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame,
+                    new FrontPage()).commit();
+
+        } else if (id == R.id.nav_RecordPage) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame,
+                    new RecordPage()).commit();
+
+        } else if (id == R.id.nav_LyricsPage) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame,
+                    new LyricsPage()).commit();
+
+        } else if (id == R.id.nav_MetronomePage) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame,
+                    new MetronomePage()).commit();
 
         } else if (id == R.id.nav_share) {
 

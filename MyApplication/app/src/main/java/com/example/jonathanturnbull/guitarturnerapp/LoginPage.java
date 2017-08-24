@@ -14,7 +14,7 @@ public class LoginPage extends AppCompatActivity {
     }
 
     public void goToFrontpage(View view) {
-        Intent intent = new Intent(this, FrontPage.class);
+        Intent intent = new Intent(this, FrontPageNav.class);
         startActivity(intent);
     }
 }
