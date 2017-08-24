@@ -35,5 +35,8 @@
 
     <string name="action_settings">Settings</string>
     <string name="welcome_user_ready_to_rock">Welcome User, Ready to Rock?</string>
+    <string name="switch_name">Switch</string>
+    <string name="metronomeicon">MetronomeIcon</string>
+    <string name="switch_onOff">on/off</string>
 
 </resources>
