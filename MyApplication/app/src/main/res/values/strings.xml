@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">GuitarTurnerApp</string>
+    <string name="app_name">GuitarTunerApp</string>
+
+    <string name="FrontPage">Tuner Page</string>
+    <string name="RecordPage">Record</string>
+    <string name="AddRecordPage">Add Recording</string>
+    <string name="MetronomePage">Metronome</string>
+    <string name="LoginPage">Login</string>
+    <string name="LyricsPage">Lyrics</string>
+    <string name="AddLyricsPage">Add Lyrics</string>
+
+    
 </resources>
