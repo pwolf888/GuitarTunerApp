@@ -16,9 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TunerPage" />
         <activity android:name=".AddRecordPage" />
-        <activity android:name=".LyricsPage" />
         <activity android:name=".AddLyricsPage" />
         <activity
             android:name=".FrontPageNav"
