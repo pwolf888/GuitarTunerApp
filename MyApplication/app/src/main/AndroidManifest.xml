@@ -21,7 +21,11 @@
         <activity android:name=".AddRecordPage" />
         <activity android:name=".MetronomePage" />
         <activity android:name=".LyricsPage" />
-        <activity android:name=".AddLyricsPage"></activity>
+        <activity android:name=".AddLyricsPage" />
+        <activity
+            android:name=".FrontPageNav"
+            android:label="@string/title_activity_front_page_nav"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

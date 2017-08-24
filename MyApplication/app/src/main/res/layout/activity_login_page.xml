@@ -46,5 +46,6 @@
         android:layout_below="@+id/editText_userPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
-        android:text="@string/LoginPage" />
+        android:text="@string/LoginPage"
+        android:onClick="goToFrontpage"/>
 </RelativeLayout>

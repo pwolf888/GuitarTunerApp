@@ -2,4 +2,56 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_E"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/EString" />
+
+            <Button
+                android:id="@+id/button_A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/AString" />
+
+            <Button
+                android:id="@+id/button_D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/DString" />
+
+            <Button
+                android:id="@+id/button_G"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/GString" />
+
+            <Button
+                android:id="@+id/button_B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/BString" />
+
+            <Button
+                android:id="@+id/button_e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eString" />
+
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

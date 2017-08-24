@@ -19,4 +19,20 @@
     <string name="Password">Password</string>
     <string name="logo">Logo</string>
 
+    <!--
+        Note strings - EADGBe
+    -->
+    <string name="EString">E</string>
+    <string name="AString">A</string>
+    <string name="DString">D</string>
+    <string name="GString">G</string>
+    <string name="BString">B</string>
+    <string name="eString">e</string>
+    <string name="title_activity_front_page_nav">FrontPageNav</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
 </resources>
