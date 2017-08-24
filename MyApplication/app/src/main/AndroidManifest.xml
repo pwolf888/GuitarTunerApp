@@ -16,14 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FrontPage" />
+        <activity android:name=".TunerPage" />
         <activity android:name=".AddRecordPage" />
         <activity android:name=".LyricsPage" />
         <activity android:name=".AddLyricsPage" />
         <activity
             android:name=".FrontPageNav"
             android:label="@string/title_activity_front_page_nav"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>

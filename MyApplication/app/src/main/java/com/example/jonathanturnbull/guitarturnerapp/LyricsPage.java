@@ -18,7 +18,7 @@ public class LyricsPage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        // The view is the layout of my frontpage
+        // The view is the layout of my tunerpage
         myView = inflater.inflate(R.layout.activity_lyrics_page, container, false);
 
         return myView;

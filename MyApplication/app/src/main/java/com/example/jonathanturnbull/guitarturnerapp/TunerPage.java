@@ -1,16 +1,14 @@
 package com.example.jonathanturnbull.guitarturnerapp;
 
-import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
-public class FrontPage extends Fragment {
+public class TunerPage extends Fragment {
 
     // Declaring variables
     View myView;
@@ -20,8 +18,8 @@ public class FrontPage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        // The view is the layout of my frontpage
-        myView = inflater.inflate(R.layout.frontpage, container, false);
+        // The view is the layout of my tunerpage
+        myView = inflater.inflate(R.layout.tunerpage, container, false);
 
         return myView;
     }
