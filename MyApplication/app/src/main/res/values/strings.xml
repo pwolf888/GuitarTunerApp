@@ -28,15 +28,22 @@
     <string name="GString">G</string>
     <string name="BString">B</string>
     <string name="eString">e</string>
+
     <string name="title_activity_front_page_nav">Guitar Tuner</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
     <string name="welcome_user_ready_to_rock">Welcome User, Ready to Rock?</string>
+
     <string name="switch_name">Switch</string>
     <string name="metronomeicon">MetronomeIcon</string>
     <string name="switch_onOff">on/off</string>
+    <string name="add">+</string>
+    <string name="song_title">Song Title</string>
+    <string name="record">record</string>
+    <string name="back">X</string>
 
 </resources>

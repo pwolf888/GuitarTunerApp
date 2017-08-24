@@ -20,7 +20,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/switch_onOff"
-        android:textSize="40sp"/>
+        android:textSize="20sp"/>
 
     <SeekBar
         android:id="@+id/seekBar_Metro"

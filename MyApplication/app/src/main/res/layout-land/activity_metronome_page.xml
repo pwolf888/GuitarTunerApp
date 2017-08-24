@@ -19,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/switch_onOff" />
+        android:text="@string/switch_onOff"
+        android:textSize="20sp"/>
 
     <SeekBar
         android:id="@+id/seekBar_Metro"
