@@ -21,7 +21,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/EString"
                 android:textSize="50sp"
-                android:height="100dp"/>
+                android:height="100dp"
+                android:onClick="playE"/>
 
             <Button
                 android:id="@+id/button_A"

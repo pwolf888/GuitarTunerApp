@@ -4,13 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 
-public class RecordPage extends Fragment {
+public class RecordPage extends Fragment implements OnClickListener{
 
     // Declaring variables
     View myView;
@@ -22,12 +24,22 @@ public class RecordPage extends Fragment {
 
         // The view is the layout of my tunerpage
         myView = inflater.inflate(R.layout.activity_record_page, container, false);
-
+        Button b = (Button) myView.findViewById(R.id.button_addRecord);
+        b.setOnClickListener(this);
         return myView;
     }
 
+    @Override
+    public void onClick(View v) {
+        FragmentManager fragmentManager = getFragmentManager();
+        switch (v.getId()) {
+            case R.id.button_addRecord:
+                fragmentManager.beginTransaction().replace(R.id.content_frame,
+                        new AddRecordsPage()).commit();
+                break;
+        }
+    }
 
-    
 }
 
 

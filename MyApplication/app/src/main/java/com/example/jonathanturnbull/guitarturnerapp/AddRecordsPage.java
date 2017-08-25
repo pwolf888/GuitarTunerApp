@@ -1,21 +1,19 @@
 package com.example.jonathanturnbull.guitarturnerapp;
 
-import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 
-public class TunerPage extends Fragment  {
+public class AddRecordsPage extends Fragment  {
 
     // Declaring variables
     View myView;
-    Button playE;
-
 
     // Setting up the layout of the front page in the first fragment
     @Nullable
@@ -23,9 +21,7 @@ public class TunerPage extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         // The view is the layout of my tunerpage
-        myView = inflater.inflate(R.layout.tunerpage, container, false);
-
-
+        myView = inflater.inflate(R.layout.activity_add_record_page, container, false);
 
         return myView;
     }
@@ -33,3 +29,4 @@ public class TunerPage extends Fragment  {
 
 
 }
+
