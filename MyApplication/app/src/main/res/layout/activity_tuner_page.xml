@@ -68,39 +68,44 @@
     </ScrollView>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryDark">
 
         <Button
             android:id="@+id/button_tuner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/tuner" />
+            android:text="@string/tuner"
+            android:onClick="goToFrontpage"/>
 
         <Button
             android:id="@+id/button_record"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/record" />
+            android:text="@string/record"
+            android:onClick="goToRecordpage"/>
 
         <Button
             android:id="@+id/button_lyrics"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/LyricsPage" />
+            android:text="@string/LyricsPage"
+            android:onClick="goToLyricspage"/>
 
         <Button
             android:id="@+id/button_metronome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/MetronomePage" />
+            android:text="@string/MetronomePage"
+            android:onClick="goToMetronomepage"/>
     </LinearLayout>
 
 </RelativeLayout>

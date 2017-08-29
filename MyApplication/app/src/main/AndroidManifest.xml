@@ -17,7 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddRecordPage" />
-        <activity android:name=".TunerPage"></activity>
+        <activity android:name=".TunerPage" />
+        <activity android:name=".RecordPage" />
+        <activity android:name=".LyricsPage" />
+        <activity android:name=".MetronomePage" />
+        <activity android:name=".AddLyricsPage" />
     </application>
 
 </manifest>
