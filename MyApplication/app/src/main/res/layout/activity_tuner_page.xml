@@ -81,7 +81,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/tuner"
-            android:onClick="goToFrontpage"/>
+            android:onClick="goToFrontpage"
+            android:textSize="12sp"/>
 
         <Button
             android:id="@+id/button_record"
@@ -89,7 +90,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/record"
-            android:onClick="goToRecordpage"/>
+            android:onClick="goToRecordpage"
+            android:textSize="12sp"/>
 
         <Button
             android:id="@+id/button_lyrics"
@@ -97,7 +99,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/LyricsPage"
-            android:onClick="goToLyricspage"/>
+            android:onClick="goToLyricspage"
+            android:textSize="12sp"/>
 
         <Button
             android:id="@+id/button_metronome"
@@ -105,7 +108,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/MetronomePage"
-            android:onClick="goToMetronomepage"/>
+            android:onClick="goToMetronomepage"
+            android:textSize="12sp"/>
     </LinearLayout>
 
 </RelativeLayout>

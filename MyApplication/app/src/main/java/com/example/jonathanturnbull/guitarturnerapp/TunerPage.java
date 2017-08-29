@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class TunerPage extends AppCompatActivity {
+public class TunerPage extends AppCompatActivity implements View.OnClickListener{
 
-    View myView;
+
     Button E;
+    Button G;
+    Button e;
 
 
     @Override
@@ -18,9 +20,46 @@ public class TunerPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tuner_page);
 
+        // Onclick event - switch statement
+        E = (Button) findViewById(R.id.button_E);
+        E.setOnClickListener(this);
+        G = (Button) findViewById(R.id.button_G);
+        G.setOnClickListener(this);
+        e = (Button) findViewById(R.id.button_e);
+        e.setOnClickListener(this);
+
 
 
     }
+
+    public void onClick(View v) {
+        // Create mediaplayer
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.test_sound);
+
+        // Find the button by id and play a corresponding note
+        switch (v.getId()) {
+
+            case R.id.button_E:
+                // play sound of E
+                mediaPlayer.start();
+                break;
+
+            case R.id.button_G:
+                // play sound of G
+                mediaPlayer.start();
+                break;
+
+            case R.id.button_e:
+                // play sound of e
+                mediaPlayer.start();
+                break;
+
+            default:
+                break;
+        }
+    }
+
+
 
     public void goToFrontpage(View view) {
         Intent intent = new Intent(this, TunerPage.class);
@@ -42,9 +81,11 @@ public class TunerPage extends AppCompatActivity {
         startActivity(intent);
     }
 
+
     public void playE(View view) {
         // pre load the sound files
-        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.test_sound);
-        mediaPlayer.start();
+
     }
+
+
 }
