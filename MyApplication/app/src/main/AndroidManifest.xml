@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddRecordPage" />
+        <activity android:name=".TunerPage"></activity>
     </application>
 
 </manifest>

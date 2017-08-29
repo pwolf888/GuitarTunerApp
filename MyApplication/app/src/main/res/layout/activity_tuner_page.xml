@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_E"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="200dp"
+                android:onClick="playE"
+                android:text="@string/EString"
+                android:textSize="50sp" />
+
+            <Button
+                android:id="@+id/button_A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="200dp"
+                android:text="@string/AString"
+                android:textSize="50sp" />
+
+            <Button
+                android:id="@+id/button_D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="200dp"
+                android:text="@string/DString"
+                android:textSize="50sp" />
+
+            <Button
+                android:id="@+id/button_G"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="200dp"
+                android:text="@string/GString"
+                android:textSize="50sp" />
+
+            <Button
+                android:id="@+id/button_B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="200dp"
+                android:text="@string/BString"
+                android:textSize="50sp" />
+
+            <Button
+                android:id="@+id/button_e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:height="200dp"
+                android:text="@string/eString"
+                android:textSize="50sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/button_tuner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tuner" />
+
+        <Button
+            android:id="@+id/button_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/record" />
+
+        <Button
+            android:id="@+id/button_lyrics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/LyricsPage" />
+
+        <Button
+            android:id="@+id/button_metronome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/MetronomePage" />
+    </LinearLayout>
+
+</RelativeLayout>
