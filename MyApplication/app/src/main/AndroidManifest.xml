@@ -17,12 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddRecordPage" />
-        <activity
-            android:name=".FrontPageNav"
-            android:label="@string/title_activity_front_page_nav"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
     </application>
 
 </manifest>

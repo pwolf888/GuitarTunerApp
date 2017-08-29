@@ -1,35 +1,17 @@
 package com.example.jonathanturnbull.guitarturnerapp;
 
-import android.media.MediaPlayer;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 
+public class TunerPage extends AppCompatActivity {
 
-public class TunerPage extends Fragment  {
-
-    // Declaring variables
-    View myView;
-    Button playE;
-
-
-    // Setting up the layout of the front page in the first fragment
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        // The view is the layout of my tunerpage
-        myView = inflater.inflate(R.layout.tunerpage, container, false);
-
-
-
-        return myView;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.tunerpage);
     }
-
 
 
 }
