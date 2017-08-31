@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,7 +14,10 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
 
 
     Button E;
+    Button A;
+    Button D;
     Button G;
+    Button B;
     Button e;
 
 
@@ -23,14 +29,28 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
         // Onclick event - switch statement
         E = (Button) findViewById(R.id.button_E);
         E.setOnClickListener(this);
+        A = (Button) findViewById(R.id.button_A);
+        A.setOnClickListener(this);
+        D = (Button) findViewById(R.id.button_D);
+        D.setOnClickListener(this);
         G = (Button) findViewById(R.id.button_G);
         G.setOnClickListener(this);
+        B = (Button) findViewById(R.id.button_B);
+        B.setOnClickListener(this);
         e = (Button) findViewById(R.id.button_e);
         e.setOnClickListener(this);
 
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_layout, menu);
+        return true;
+    }
+
 
     public void onClick(View v) {
         // Create mediaplayer
@@ -44,8 +64,22 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
                 mediaPlayer.start();
                 break;
 
+            case R.id.button_A:
+                // play sound of A
+                mediaPlayer.start();
+                break;
+
+            case R.id.button_D:
+                // play sound of D
+                mediaPlayer.start();
+                break;
+
             case R.id.button_G:
                 // play sound of G
+                mediaPlayer.start();
+                break;
+            case R.id.button_B:
+                // play sound of B
                 mediaPlayer.start();
                 break;
 
@@ -88,4 +122,8 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
     }
 
 
+    public void goHome(MenuItem item) {
+        Intent intent = new Intent(this, TunerPage.class);
+        startActivity(intent);
+    }
 }
