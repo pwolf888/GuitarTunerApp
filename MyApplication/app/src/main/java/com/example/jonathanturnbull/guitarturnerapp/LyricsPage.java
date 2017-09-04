@@ -115,10 +115,6 @@ public class LyricsPage extends AppCompatActivity {
         return true;
     }
 
-//    public void goToAddLyricsPage(View view) {
-//        Intent intent = new Intent(this, AddLyricsPage.class);
-//        startActivity(intent);
-//    }
 
     public void goHome(MenuItem item) {
         Intent intent = new Intent(this, TunerPage.class);
