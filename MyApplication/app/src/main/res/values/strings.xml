@@ -49,5 +49,6 @@
     <string name="song_name">Song Title</string>
     <string name="enter_lyrics_here">Enter Lyrics Here</string>
     <string name="save">save</string>
+    <string name="delete">delete</string>
 
 </resources>

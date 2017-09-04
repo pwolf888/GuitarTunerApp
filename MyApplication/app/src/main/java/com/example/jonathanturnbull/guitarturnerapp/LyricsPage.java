@@ -40,6 +40,7 @@ public class LyricsPage extends AppCompatActivity {
         setContentView(R.layout.activity_lyrics_page);
 
 
+
         // Create the Database
         myDBHelper = new DBHelper(this);
 
@@ -61,6 +62,7 @@ public class LyricsPage extends AppCompatActivity {
             }
         });
 
+
         displayLyrics();
 
     }
@@ -80,7 +82,7 @@ public class LyricsPage extends AppCompatActivity {
             int id = cursor.getInt(cursor.getColumnIndex("_id"));
             String SongTitle = cursor.getString(cursor.getColumnIndex("songtitle"));
             String lyricsText = cursor.getString(cursor.getColumnIndex("lyricstext"));
-            lyrics.add(id + SongTitle + lyricsText);
+            lyrics.add(id +". " + SongTitle + " -  \n" + lyricsText);
         }
 
         return lyrics;
@@ -93,8 +95,12 @@ public class LyricsPage extends AppCompatActivity {
 
         // If the data is not null push it into an array adapter
         if( values != null) {
-            ArrayAdapter<String> adapter = new ArrayAdapter<String> (this,
-                    android.R.layout.simple_list_item_1, values);
+//            ArrayAdapter<String> adapter = new ArrayAdapter<String> (this,
+//                    android.R.layout.simple_list_item_1, values);
+//            listView.setAdapter(adapter);
+
+            LyricsListAdapter adapter = new LyricsListAdapter(this, values);
+            // Load the adapter to list view
             listView.setAdapter(adapter);
         }
 

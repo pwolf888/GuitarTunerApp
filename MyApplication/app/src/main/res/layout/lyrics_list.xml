@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
@@ -7,43 +7,36 @@
 
     <TextView
         android:id="@+id/label_lyric_id"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:paddingTop="5dp"
+        android:textSize="12sp"
         android:textColor="#000"
-        android:paddingLeft="60dp"/>
+        />
 
     <TextView
         android:id="@+id/label_lyric_title"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:paddingTop="5dp"
         android:textColor="#000"
-        android:paddingLeft="60dp"/>
+        />
 
     <TextView
         android:id="@+id/label_lyric_lyrics"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:paddingTop="5dp"
         android:textColor="#000"
-        android:paddingLeft="60dp"/>
+        />
 
     <Button
         android:id="@+id/Button_remove"
-
+        android:text="@string/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:paddingTop="5dp"
+        android:textSize="12sp"
+        android:layout_alignParentRight="true"
         android:textColor="#000"
-        android:paddingLeft="60dp" />
+        />
 
 
-</LinearLayout>
+
+</RelativeLayout>
