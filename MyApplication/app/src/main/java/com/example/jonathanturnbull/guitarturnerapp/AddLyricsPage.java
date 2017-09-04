@@ -7,12 +7,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+
+
 public class AddLyricsPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_lyrics_page);
+
     }
 
     @Override
@@ -26,4 +29,5 @@ public class AddLyricsPage extends AppCompatActivity {
         Intent intent = new Intent(this, TunerPage.class);
         startActivity(intent);
     }
+
 }

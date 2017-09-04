@@ -94,7 +94,7 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
+    // Buttons that link to other pages
     public void goToFrontpage(View view) {
         Intent intent = new Intent(this, TunerPage.class);
         startActivity(intent);
@@ -113,12 +113,6 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
     public void goToMetronomepage(View view) {
         Intent intent = new Intent(this, MetronomePage.class);
         startActivity(intent);
-    }
-
-
-    public void playE(View view) {
-        // pre load the sound files
-
     }
 
 
