@@ -159,6 +159,8 @@ public class LyricsPage extends AppCompatActivity {
         SQLiteDatabase db = myDBHelper.getReadableDatabase();
 
         // Create cursor and find the minimum Column ID
+        // https://stackoverflow.com/questions/4890616/get-minimum-from-sqlite-database-column
+        // Author: Corey Sunwold
         cursor = db.query(TABLE_NAME, new String[] { "min(" + COLUMN_ID + ")" }, null, null,
                 null, null, null);
 
@@ -167,12 +169,15 @@ public class LyricsPage extends AppCompatActivity {
         // An int that stores the first position in the index
         int rowId = cursor.getInt(0);
 
+        /*End of code borrowed*/
+
         // Use the id of the parent view of the list item to access its position
         View parentRow = (View) view.getParent();
         ListView listView = (ListView) parentRow.getParent();
         position = listView.getPositionForView(parentRow);
-        position += rowId ;
-        Log.d("POSANDROW", "pos:" + position + "rowid:" + rowId);
+        Log.d("POSANDROW", "pos: " + position + "+ rowid:" + rowId);
+        position += rowId;
+        Log.d("POSANDROW", "pos: " + position + "+ rowid:" + rowId);
 
         SQLiteDatabase db2 = myDBHelper.getWritableDatabase();
         db2.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + "='"+ position  +"'");
@@ -180,6 +185,7 @@ public class LyricsPage extends AppCompatActivity {
         db2.close();
 
         displayLyrics();
+
         //Log.d("PRESSED", "i have been pressed" + position);
     }
 
