@@ -2,6 +2,7 @@ package com.example.jonathanturnbull.guitarturnerapp;
 
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import static android.R.attr.value;
+import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.COLUMN_ID;
+import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.TABLE_NAME;
+
 /**
  * Created by jonathanturnbull on 4/09/2017.
  */
@@ -18,6 +23,7 @@ import java.util.List;
 public class LyricsListAdapter extends ArrayAdapter {
     private final Context context;
     private final List<String> values;
+    DBHelper myDBHelper;
 
     // Constructor which is called when the custom adapter is created
     public LyricsListAdapter(Context context, List<String> values) {
@@ -37,7 +43,8 @@ public class LyricsListAdapter extends ArrayAdapter {
         TextView id = (TextView) rowView.findViewById(R.id.label_lyric_id);
         TextView songTitle = (TextView) rowView.findViewById(R.id.label_lyric_title);
         TextView lyricsText = (TextView) rowView.findViewById(R.id.label_lyric_lyrics);
-        //Button removeButton = (Button) rowView.findViewById(R.id.Button_remove);
+        Button removeButton = (Button) rowView.findViewById(R.id.Button_remove);
+
 
         // Set the content of the text based on the values string in the main activity
         id.setText(values.get(position));

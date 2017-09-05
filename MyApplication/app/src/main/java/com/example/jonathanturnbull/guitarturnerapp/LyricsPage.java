@@ -1,26 +1,35 @@
 package com.example.jonathanturnbull.guitarturnerapp;
 
 
+
 import android.content.ContentValues;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import android.view.View;
-import android.widget.ArrayAdapter;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
 
+
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.R.attr.value;
+import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.COLUMN_ID;
+import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.TABLE_NAME;
 
 
 public class LyricsPage extends AppCompatActivity {
@@ -31,8 +40,12 @@ public class LyricsPage extends AppCompatActivity {
     EditText songTitle;
     EditText lyrics;
     ListView listView;
+    Button deleteButton;
+    int position;
+    Cursor cursor;
 
-    String[] allColumns = new String[] {"_id", "songTitle", "lyricstext" };
+
+    String[] allColumns = new String[] { "_id", "songTitle", "lyricstext" };
 
     @Override
     protected void onCreate(Bundle savedInstancedState) {
@@ -46,6 +59,18 @@ public class LyricsPage extends AppCompatActivity {
 
         // Save Button
         saveButton = (Button) findViewById(R.id.button_addLyrics);
+
+        // Delete Button
+//        deleteButton = (Button) findViewById(R.id.Button_remove);
+
+//        deleteButton.setOnClickListener( new View.OnClickListener()  {
+//            @Override
+//            public void onClick(View v) {
+//                View parentRow = (View) v.getParent();
+//                ListView listView = (ListView) parentRow.getParent();
+//                position = listView.getPositionForView(parentRow);
+//            }
+//        });
 
         // Add List View
         listView = (ListView) findViewById(R.id.lyricsList);
@@ -63,6 +88,7 @@ public class LyricsPage extends AppCompatActivity {
         });
 
 
+
         displayLyrics();
 
     }
@@ -75,7 +101,8 @@ public class LyricsPage extends AppCompatActivity {
         SQLiteDatabase db = myDBHelper.getReadableDatabase();
 
         // Create cursor adapter
-        Cursor cursor = db.query(TABLE_NAME, allColumns, null, null, null, null, null);
+        cursor = db.query(TABLE_NAME, allColumns, null, null, null, null, null);
+
 
         // While Loop to collect data
         while (cursor.moveToNext()) {
@@ -126,6 +153,38 @@ public class LyricsPage extends AppCompatActivity {
         Intent intent = new Intent(this, TunerPage.class);
         startActivity(intent);
     }
+
+    public void clearRow(View view) {
+        // Get Database
+        SQLiteDatabase db = myDBHelper.getReadableDatabase();
+
+        // Create cursor and find the minimum Column ID
+        cursor = db.query(TABLE_NAME, new String[] { "min(" + COLUMN_ID + ")" }, null, null,
+                null, null, null);
+
+        // Move to the first position
+        cursor.moveToFirst();
+        // An int that stores the first position in the index
+        int rowId = cursor.getInt(0);
+
+        // Use the id of the parent view of the list item to access its position
+        View parentRow = (View) view.getParent();
+        ListView listView = (ListView) parentRow.getParent();
+        position = listView.getPositionForView(parentRow);
+        position += rowId ;
+        Log.d("POSANDROW", "pos:" + position + "rowid:" + rowId);
+
+        SQLiteDatabase db2 = myDBHelper.getWritableDatabase();
+        db2.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + "='"+ position  +"'");
+        db2.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + TABLE_NAME + "'");
+        db2.close();
+
+        displayLyrics();
+        //Log.d("PRESSED", "i have been pressed" + position);
+    }
+
+
+
 
 
 
