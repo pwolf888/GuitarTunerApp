@@ -22,50 +22,79 @@
                 android:layout_height="wrap_content"
                 android:height="200dp"
                 android:onClick="playE"
-
                 android:textSize="50sp"
-                android:background="@drawable/woodgrain_lowe"
+                android:background="@drawable/e"
                 />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fret"
+                android:contentDescription="@string/a_fret" />
 
             <Button
                 android:id="@+id/button_A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:height="200dp"
-                android:text="@string/AString"
-                android:textSize="50sp" />
+                android:textSize="50sp"
+                android:background="@drawable/a" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fret"
+                android:contentDescription="@string/a_fret" />
 
             <Button
                 android:id="@+id/button_D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:height="200dp"
-                android:text="@string/DString"
-                android:textSize="50sp" />
+                android:textSize="50sp"
+                android:background="@drawable/d"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fret"
+                android:contentDescription="@string/a_fret" />
 
             <Button
                 android:id="@+id/button_G"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:height="200dp"
-                android:text="@string/GString"
-                android:textSize="50sp" />
+                android:textSize="50sp"
+                android:background="@drawable/g"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fret"
+                android:contentDescription="@string/a_fret" />
 
             <Button
                 android:id="@+id/button_B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:height="200dp"
-                android:text="@string/BString"
-                android:textSize="50sp" />
+                android:textSize="50sp"
+                android:background="@drawable/b"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/fret"
+                android:contentDescription="@string/a_fret" />
 
             <Button
                 android:id="@+id/button_e"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:height="200dp"
-                android:text="@string/eString"
-                android:textSize="50sp" />
+                android:textSize="50sp"
+                android:background="@drawable/he"/>
 
         </LinearLayout>
     </ScrollView>

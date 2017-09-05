@@ -21,6 +21,7 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
     Button e;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,6 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
         B.setOnClickListener(this);
         e = (Button) findViewById(R.id.button_e);
         e.setOnClickListener(this);
-
 
 
     }
