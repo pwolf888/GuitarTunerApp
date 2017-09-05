@@ -2,7 +2,7 @@ package com.example.jonathanturnbull.guitarturnerapp;
 
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,15 +12,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import static android.R.attr.value;
-import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.COLUMN_ID;
-import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.TABLE_NAME;
+
 
 /**
  * Created by jonathanturnbull on 4/09/2017.
  */
 
-public class LyricsListAdapter extends ArrayAdapter {
+public class LyricsListAdapter extends ArrayAdapter<String> {
     private final Context context;
     private final List<String> values;
     DBHelper myDBHelper;
