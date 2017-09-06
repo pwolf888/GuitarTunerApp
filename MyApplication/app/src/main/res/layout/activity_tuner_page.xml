@@ -102,16 +102,21 @@
                 android:background="@drawable/fret"
                 android:contentDescription="@string/a_fret" />
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/woodgrain_hole"/>
+
         </LinearLayout>
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimaryDark">
+        android:background="@drawable/bridge">
 
         <Button
             android:id="@+id/button_tuner"
@@ -120,7 +125,9 @@
             android:layout_weight="1"
             android:text="@string/tuner"
             android:onClick="goToFrontpage"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            android:textColor="@color/colorAccent"
+            android:background="@drawable/plugbtn"/>
 
         <Button
             android:id="@+id/button_record"
@@ -129,7 +136,9 @@
             android:layout_weight="1"
             android:text="@string/record"
             android:onClick="goToRecordpage"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            android:textColor="@color/colorAccent"
+            android:background="@drawable/plugbtn"/>
 
         <Button
             android:id="@+id/button_lyrics"
@@ -138,7 +147,9 @@
             android:layout_weight="1"
             android:text="@string/LyricsPage"
             android:onClick="goToLyricspage"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            android:textColor="@color/colorAccent"
+            android:background="@drawable/plugbtn"/>
 
         <Button
             android:id="@+id/button_metronome"
@@ -147,7 +158,9 @@
             android:layout_weight="1"
             android:text="@string/MetronomePage"
             android:onClick="goToMetronomepage"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            android:textColor="@color/colorAccent"
+            android:background="@drawable/plugbtn"/>
     </LinearLayout>
 
 </RelativeLayout>
