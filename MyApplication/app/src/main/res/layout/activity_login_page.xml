@@ -49,4 +49,16 @@
         android:layout_marginTop="45dp"
         android:text="@string/LoginPage"
         android:onClick="goToFrontpage"/>
+
+    <TextView
+        android:id="@+id/registerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView_logo"
+        android:layout_alignStart="@+id/imageView_logo"
+        android:layout_below="@+id/button_Login"
+        android:layout_marginTop="18dp"
+        android:text="Register" />
+
+
 </RelativeLayout>

@@ -21,6 +21,7 @@
         <activity android:name=".RecordPage" />
         <activity android:name=".LyricsPage" />
         <activity android:name=".MetronomePage" />
+        <activity android:name=".RegisterPage"></activity>
     </application>
 
 </manifest>

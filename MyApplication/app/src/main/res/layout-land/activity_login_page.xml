@@ -42,8 +42,21 @@
         android:id="@+id/button_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText_userPassword"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="@string/LoginPage" />
+        android:text="@string/LoginPage"
+        android:layout_below="@+id/editText_userPassword"
+        android:layout_alignLeft="@+id/editText_userPassword"
+        android:layout_alignStart="@+id/editText_userPassword" />
+
+    <TextView
+        android:id="@+id/registerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button_Login"
+        android:layout_marginBottom="13dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/button_Login"
+        android:layout_toRightOf="@+id/button_Login"
+        android:text="Register" />
 </RelativeLayout>
