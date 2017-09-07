@@ -26,4 +26,9 @@ public class MetronomePage extends AppCompatActivity {
         Intent intent = new Intent(this, TunerPage.class);
         startActivity(intent);
     }
+
+    public void logOut(MenuItem item) {
+        Intent intent = new Intent(this, LoginPage.class);
+        startActivity(intent);
+    }
 }

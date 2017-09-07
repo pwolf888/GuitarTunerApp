@@ -7,9 +7,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -27,14 +25,12 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.attr.value;
 import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.COLUMN_ID;
-import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.TABLE_NAME;
 
 
 public class LyricsPage extends AppCompatActivity {
 
-    public static final String TABLE_NAME = "lyrics";
+    public static final String TABLE_LYRICS = "lyrics";
     DBHelper myDBHelper;
     Button saveButton;
     EditText songTitle;
@@ -101,7 +97,7 @@ public class LyricsPage extends AppCompatActivity {
         SQLiteDatabase db = myDBHelper.getReadableDatabase();
 
         // Create cursor adapter
-        cursor = db.query(TABLE_NAME, allColumns, null, null, null, null, null);
+        cursor = db.query(TABLE_LYRICS, allColumns, null, null, null, null, null);
 
 
         // While Loop to collect data
@@ -138,7 +134,7 @@ public class LyricsPage extends AppCompatActivity {
         values.put("songtitle", songTitle);
         values.put("lyricstext", lyrics);
         SQLiteDatabase db = myDBHelper.getWritableDatabase();
-        db.insert(TABLE_NAME, null, values);
+        db.insert(TABLE_LYRICS, null, values);
     }
 
     @Override
@@ -154,6 +150,11 @@ public class LyricsPage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void logOut(MenuItem item) {
+        Intent intent = new Intent(this, LoginPage.class);
+        startActivity(intent);
+    }
+
     public void clearRow(View view) {
         // Get Database
         SQLiteDatabase db = myDBHelper.getReadableDatabase();
@@ -161,7 +162,7 @@ public class LyricsPage extends AppCompatActivity {
         // Create cursor and find the minimum Column ID
         // https://stackoverflow.com/questions/4890616/get-minimum-from-sqlite-database-column
         // Author: Corey Sunwold
-        cursor = db.query(TABLE_NAME, new String[] { "min(" + COLUMN_ID + ")" }, null, null,
+        cursor = db.query(TABLE_LYRICS, new String[] { "min(" + COLUMN_ID + ")" }, null, null,
                 null, null, null);
 
         // Move to the first position
@@ -180,8 +181,8 @@ public class LyricsPage extends AppCompatActivity {
         Log.d("POSANDROW", "pos: " + position + "+ rowid:" + rowId);
 
         SQLiteDatabase db2 = myDBHelper.getWritableDatabase();
-        db2.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COLUMN_ID + "='"+ position  +"'");
-        db2.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + TABLE_NAME + "'");
+        db2.execSQL("DELETE FROM " + TABLE_LYRICS + " WHERE " + COLUMN_ID + "='"+ position  +"'");
+        db2.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + TABLE_LYRICS + "'");
         db2.close();
 
         displayLyrics();

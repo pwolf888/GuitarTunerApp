@@ -10,14 +10,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String TABLE_NAME = "lyrics";
+    public static final String TABLE_LYRICS = "lyrics";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_TITLE = "songtitle";
     public static final String COLUMN_SONG = "lyricstext";
     private static final String DATABASE_NAME = "lyric.db";
     private static final int DATABASE_VERSION = 1;
     // Database creation sql statement
-    private static final String DATABASE_CREATE = "create table " + TABLE_NAME
+    private static final String DATABASE_CREATE = "create table " + TABLE_LYRICS
             + "(" + COLUMN_ID + " integer primary key autoincrement, "
             + COLUMN_TITLE + " text not null, "
             + COLUMN_SONG + " text not null);";
@@ -31,7 +31,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_LYRICS);
         onCreate(db);
     }
 }
