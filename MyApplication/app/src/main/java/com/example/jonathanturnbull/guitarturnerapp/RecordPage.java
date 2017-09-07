@@ -33,4 +33,8 @@ public class RecordPage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void logOut(MenuItem item) {
+        Intent intent = new Intent(this, LoginPage.class);
+        startActivity(intent);
+    }
 }

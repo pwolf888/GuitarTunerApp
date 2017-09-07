@@ -20,4 +20,9 @@ public class LoginPage extends AppCompatActivity {
         Intent intent = new Intent(this, TunerPage.class);
         startActivity(intent);
     }
+
+    public void goToRegisterPage(View view) {
+        Intent intent = new Intent(this, RegisterPage.class);
+        startActivity(intent);
+    }
 }

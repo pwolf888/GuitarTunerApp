@@ -2,10 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <item android:id="@+id/new_game"
+    <item android:id="@+id/home"
         android:icon="@drawable/ic_menu_camera"
         android:title="home"
         android:onClick="goHome"
         android:showAsAction="always"/>
+
+    <item android:id="@+id/logOut"
+        android:icon="@drawable/ic_menu_camera"
+        android:title="Logout"
+        android:onClick="logOut"
+        android:showAsAction="ifRoom"/>
 
 </menu>

@@ -12,13 +12,9 @@ import android.widget.Button;
 
 public class TunerPage extends AppCompatActivity implements View.OnClickListener{
 
+    // Declare variables
+    Button E, A, D, G, B, e;
 
-    Button E;
-    Button A;
-    Button D;
-    Button G;
-    Button B;
-    Button e;
 
 
 
@@ -118,6 +114,11 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
 
     public void goHome(MenuItem item) {
         Intent intent = new Intent(this, TunerPage.class);
+        startActivity(intent);
+    }
+
+    public void logOut(MenuItem item) {
+        Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);
     }
 }

@@ -46,17 +46,18 @@
         android:text="@string/LoginPage"
         android:layout_below="@+id/editText_userPassword"
         android:layout_alignLeft="@+id/editText_userPassword"
-        android:layout_alignStart="@+id/editText_userPassword" />
+        android:layout_alignStart="@+id/editText_userPassword"
+        android:onClick="goToFrontpage"/>
 
-    <TextView
+    <Button
         android:id="@+id/registerBtn"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button_Login"
-        android:layout_marginBottom="13dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/button_Login"
-        android:layout_toRightOf="@+id/button_Login"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/editText_userPassword"
+        android:layout_alignRight="@+id/editText_userPassword"
+        android:layout_alignEnd="@+id/editText_userPassword"
+        android:onClick="goToRegisterPage"
         android:text="Register" />
 </RelativeLayout>
