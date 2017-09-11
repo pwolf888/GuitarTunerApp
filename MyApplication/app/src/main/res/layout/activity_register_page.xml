@@ -15,7 +15,7 @@
         android:layout_marginTop="100dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="User Name" />
+        android:hint="User Name" />
 
     <EditText
         android:id="@+id/passWord"
@@ -26,8 +26,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Password" />
+        android:inputType="textPassword"
+        android:hint="Password" />
 
     <EditText
         android:id="@+id/passWordc"
@@ -36,8 +36,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Comfirm Password" />
+        android:inputType="textPassword"
+        android:hint="Comfirm Password" />
 
     <Button
         android:id="@+id/Register"

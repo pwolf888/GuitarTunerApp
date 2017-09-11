@@ -181,7 +181,7 @@ public class LyricsPage extends AppCompatActivity {
         Log.d("POSANDROW", "pos: " + position + "+ rowid:" + rowId);
 
         SQLiteDatabase db2 = myDBHelper.getWritableDatabase();
-        db2.execSQL("DELETE FROM " + TABLE_LYRICS + " WHERE " + COLUMN_ID + "='"+ position  +"'");
+        db2.execSQL("DELETE FROM " + TABLE_LYRICS + " WHERE " + COLUMN_ID + "='"+ position +"'");
         db2.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + TABLE_LYRICS + "'");
         db2.close();
 
