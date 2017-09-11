@@ -19,7 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // My lyrics table and columns
     public static final String TABLE_LYRICS = "lyrics";
-    public static final String COLUMN_ID = "_id";
+    public static final String COLUMN_ID_LYRICS = "_id";
     public static final String COLUMN_TITLE = "songtitle";
     public static final String COLUMN_SONG = "lyricstext";
 
@@ -35,7 +35,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table " + TABLE_LYRICS
-            + "(" + COLUMN_ID + " integer primary key autoincrement, "
+            + "(" + COLUMN_ID_LYRICS + " integer primary key autoincrement, "
             + COLUMN_TITLE + " text not null, "
             + COLUMN_SONG + " text not null);";
 

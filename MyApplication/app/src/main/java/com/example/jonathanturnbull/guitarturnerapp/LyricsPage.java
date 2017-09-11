@@ -25,7 +25,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.COLUMN_ID;
+import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.COLUMN_ID_LYRICS;
 
 
 public class LyricsPage extends AppCompatActivity {
@@ -162,7 +162,7 @@ public class LyricsPage extends AppCompatActivity {
         // Create cursor and find the minimum Column ID
         // https://stackoverflow.com/questions/4890616/get-minimum-from-sqlite-database-column
         // Author: Corey Sunwold
-        cursor = db.query(TABLE_LYRICS, new String[] { "min(" + COLUMN_ID + ")" }, null, null,
+        cursor = db.query(TABLE_LYRICS, new String[] { "min(" + COLUMN_ID_LYRICS + ")" }, null, null,
                 null, null, null);
 
         // Move to the first position
@@ -181,7 +181,7 @@ public class LyricsPage extends AppCompatActivity {
         Log.d("POSANDROW", "pos: " + position + "+ rowid:" + rowId);
 
         SQLiteDatabase db2 = myDBHelper.getWritableDatabase();
-        db2.execSQL("DELETE FROM " + TABLE_LYRICS + " WHERE " + COLUMN_ID + "='"+ position +"'");
+        db2.execSQL("DELETE FROM " + TABLE_LYRICS + " WHERE " + COLUMN_ID_LYRICS + "='"+ position +"'");
         db2.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + TABLE_LYRICS + "'");
         db2.close();
 

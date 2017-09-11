@@ -1,7 +1,10 @@
 package com.example.jonathanturnbull.guitarturnerapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +18,8 @@ import android.widget.Toast;
 
 import java.security.MessageDigest;
 
+import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.TABLE_USERDATA;
+
 public class RegisterPage extends AppCompatActivity {
 
     public static final String TABLE_LYRICS = "userdata";
@@ -23,6 +28,7 @@ public class RegisterPage extends AppCompatActivity {
     EditText passWord;
     EditText passWordc;
     Button register;
+    DBHelper myDBHelper;
 
 
     @Override
@@ -38,11 +44,16 @@ public class RegisterPage extends AppCompatActivity {
 
         register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (username.length() > 8 && passWord.length() > 8) {
-
+                if (username.length() >= 8 && passWord.length() >= 8) {
+                    // get Text from form elements
                     username.getText();
                     passWord.getText();
+
+                    // Hash password to a 32 bit string
                     hasher = md5(passWord.toString());
+
+                    // insert into my database
+                    //insert(username.toString(), hasher);
 
                     Log.d("HASHED", "HASHED PASSWORD = " + hasher);
                 } else {
@@ -94,4 +105,12 @@ public class RegisterPage extends AppCompatActivity {
         }
     }
     // End of borrowed code //
+
+    public void insert(String username, String password) {
+        ContentValues values = new ContentValues();
+        values.put("username", username);
+        values.put("password", password);
+        SQLiteDatabase db = myDBHelper.getWritableDatabase();
+        db.insert(TABLE_USERDATA, null, values);
+    }
 }
