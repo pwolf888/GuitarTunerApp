@@ -3,6 +3,7 @@ package com.example.jonathanturnbull.guitarturnerapp;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
@@ -17,12 +18,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.TABLE_USERDATA;
 
 public class RegisterPage extends AppCompatActivity {
 
-    public static final String TABLE_LYRICS = "userdata";
+    public static final String TABLE_USERDATA = "userdata";
     String hasher = "";
     EditText username;
     EditText passWord;
@@ -30,12 +33,12 @@ public class RegisterPage extends AppCompatActivity {
     Button register;
     DBHelper myDBHelper;
 
-
+    String[] allColumns = new String[] { "_userid", "username", "password" };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
-
+        myDBHelper = new DBHelper(this);
         username = (EditText) findViewById(R.id.userName);
         passWord = (EditText) findViewById(R.id.passWord);
         passWordc = (EditText) findViewById(R.id.passWordc);
@@ -44,7 +47,7 @@ public class RegisterPage extends AppCompatActivity {
 
         register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (username.length() >= 8 && passWord.length() >= 8) {
+                if (username.length() == 8 && passWord.length() == 8) {
                     // get Text from form elements
                     username.getText();
                     passWord.getText();
@@ -53,9 +56,15 @@ public class RegisterPage extends AppCompatActivity {
                     hasher = md5(passWord.toString());
 
                     // insert into my database
-                    //insert(username.toString(), hasher);
+                    insert(username.toString(), hasher);
 
                     Log.d("HASHED", "HASHED PASSWORD = " + hasher);
+                    Context context = getApplicationContext();
+                    CharSequence text = "Username and Password Saved!";
+                    int duration = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
                 } else {
                     Context context = getApplicationContext();
                     CharSequence text = "No Hashing Error!";
@@ -113,4 +122,6 @@ public class RegisterPage extends AppCompatActivity {
         SQLiteDatabase db = myDBHelper.getWritableDatabase();
         db.insert(TABLE_USERDATA, null, values);
     }
+
+
 }

@@ -3,6 +3,7 @@ package com.example.jonathanturnbull.guitarturnerapp;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.EditText;
 
 /**
  * Created by jonathanturnbull on 4/09/2017.
@@ -52,4 +53,6 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_LYRICS);
         onCreate(db);
     }
+
+
 }
