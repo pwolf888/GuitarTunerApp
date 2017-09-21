@@ -50,38 +50,43 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
 
     public void onClick(View v) {
         // Create mediaplayer
-        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.test_sound);
+        MediaPlayer lowEsound = MediaPlayer.create(this, R.raw.lowesound);
+        MediaPlayer aSound = MediaPlayer.create(this, R.raw.asound);
+        MediaPlayer dSound = MediaPlayer.create(this, R.raw.dsound);
+        MediaPlayer gSound = MediaPlayer.create(this, R.raw.gsound);
+        MediaPlayer bSound = MediaPlayer.create(this, R.raw.bsound);
+        MediaPlayer hiEsound = MediaPlayer.create(this, R.raw.hiesound);
 
         // Find the button by id and play a corresponding note
         switch (v.getId()) {
 
             case R.id.button_E:
                 // play sound of E
-                mediaPlayer.start();
+                lowEsound.start();
                 break;
 
             case R.id.button_A:
                 // play sound of A
-                mediaPlayer.start();
+                aSound.start();
                 break;
 
             case R.id.button_D:
                 // play sound of D
-                mediaPlayer.start();
+                dSound.start();
                 break;
 
             case R.id.button_G:
                 // play sound of G
-                mediaPlayer.start();
+                gSound.start();
                 break;
             case R.id.button_B:
                 // play sound of B
-                mediaPlayer.start();
+                bSound.start();
                 break;
 
             case R.id.button_e:
                 // play sound of e
-                mediaPlayer.start();
+                hiEsound.start();
                 break;
 
             default:
