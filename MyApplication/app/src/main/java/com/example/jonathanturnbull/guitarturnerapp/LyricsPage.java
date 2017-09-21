@@ -45,6 +45,9 @@ public class LyricsPage extends AppCompatActivity {
     // Collumns of my database
     String[] allColumns = new String[] { "_id", "songTitle", "lyricstext" };
 
+    // Array to store id
+    ArrayList<Integer> arrayid = new ArrayList<Integer>();
+
     @Override
     protected void onCreate(Bundle savedInstancedState) {
         super.onCreate(savedInstancedState);
@@ -80,10 +83,11 @@ public class LyricsPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 insert(songTitle.getText().toString(), lyrics.getText().toString());
+                arrayid.clear();
                 displayLyrics();
             }
         });
-
+        arrayid.clear();
         displayLyrics();
     }
 
@@ -102,6 +106,9 @@ public class LyricsPage extends AppCompatActivity {
         // While Loop to collect data
         while (cursor.moveToNext()) {
             int id = cursor.getInt(cursor.getColumnIndex("_id"));
+            Log.d("TAG", "ID :" + id);
+            arrayid.add(id);
+            Log.d("ARRAY", "ID :" + arrayid);
             String SongTitle = cursor.getString(cursor.getColumnIndex("songtitle"));
             String lyricsText = cursor.getString(cursor.getColumnIndex("lyricstext"));
             lyrics.add(id +". " + SongTitle + " -  \n" + lyricsText);
@@ -158,44 +165,22 @@ public class LyricsPage extends AppCompatActivity {
     // Removes a row from the listview and database
     public void clearRow(View view) {
 
-        // Get Database
-        SQLiteDatabase db = myDBHelper.getReadableDatabase();
-
-        // Create cursor and find the minimum Column ID
-        // https://stackoverflow.com/questions/4890616/get-minimum-from-sqlite-database-column
-        // Author: Corey Sunwold
-        // Uses the minimum value to get the first ID of the lyrics table
-        cursor = db.query(TABLE_LYRICS, new String[] { "min(" + COLUMN_ID_LYRICS + ")" }, null, null,
-                null, null, null);
-
-        // Move to the first position
-        cursor.moveToFirst();
-
-        // An int that stores the first position in the index
-        int rowId = cursor.getInt(0);
-
-        /*End of code borrowed*/
-
         // Use the id of the parent view of the list item to access its position
         View parentRow = (View) view.getParent();
         ListView listView = (ListView) parentRow.getParent();
         position = listView.getPositionForView(parentRow);
-
-        // Add the position to the rowId
-        position += rowId;
+        Log.d("POS", "OUTPUT POS : " + position);
 
         // Remove the value from the database and redraw it to the screen
         SQLiteDatabase db2 = myDBHelper.getWritableDatabase();
-        db2.execSQL("DELETE FROM " + TABLE_LYRICS + " WHERE " + COLUMN_ID_LYRICS + "='"+ position +"'");
+        db2.execSQL("DELETE FROM " + TABLE_LYRICS + " WHERE " + COLUMN_ID_LYRICS + "='"+ arrayid.get(position) +"'");
         db2.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + TABLE_LYRICS + "'");
         db2.close();
 
+        // Clears the array to remake it
+        arrayid.clear();
         displayLyrics();
     }
-
-
-
-
 
 
 }
