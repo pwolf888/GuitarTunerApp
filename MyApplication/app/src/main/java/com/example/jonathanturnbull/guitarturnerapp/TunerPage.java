@@ -10,6 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+
+/***********************************
+ * Jonathan Turnbull
+ * 214527872
+ * jmturnbu
+ ***********************************/
+
 public class TunerPage extends AppCompatActivity implements View.OnClickListener{
 
     // Declare variables
