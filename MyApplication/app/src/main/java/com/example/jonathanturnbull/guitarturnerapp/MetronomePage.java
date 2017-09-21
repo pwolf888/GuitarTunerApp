@@ -18,21 +18,21 @@ public class MetronomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metronome_page);
 
+        // Get the metronome sound
         MediaPlayer metronomeSound = MediaPlayer.create(this, R.raw.metronomesound);
 
-
-
+        // A toggle button to turn the metronome on and off
         ToggleButton toggle = (ToggleButton) findViewById(R.id.switch_Metro);
         toggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
+                // Sound is playing
                 metronomeSound.start();
             } else {
+                // Sound has paused
                 metronomeSound.pause();
             }
         });
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

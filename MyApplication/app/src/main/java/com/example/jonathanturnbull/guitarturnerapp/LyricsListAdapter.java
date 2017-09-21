@@ -38,6 +38,7 @@ public class LyricsListAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = (LayoutInflater)
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+        // Inflates the row with my layout
         View rowView = inflater.inflate(R.layout.lyrics_list, parent, false);
 
         // Link the widgets on the layout with my adapter class

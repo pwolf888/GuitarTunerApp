@@ -38,7 +38,6 @@ public class LyricsPage extends AppCompatActivity {
     EditText songTitle;
     EditText lyrics;
     ListView listView;
-    Button deleteButton;
     int position;
     Cursor cursor;
 
@@ -58,18 +57,6 @@ public class LyricsPage extends AppCompatActivity {
 
         // Save Button
         saveButton = (Button) findViewById(R.id.button_addLyrics);
-
-        // Delete Button
-        //deleteButton = (Button) findViewById(R.id.Button_remove);
-
-//        deleteButton.setOnClickListener( new View.OnClickListener()  {
-//            @Override
-//            public void onClick(View v) {
-//                View parentRow = (View) v.getParent();
-//                ListView listView = (ListView) parentRow.getParent();
-//                position = listView.getPositionForView(parentRow);
-//            }
-//        });
 
         // Add List View
         listView = (ListView) findViewById(R.id.lyricsList);
@@ -106,9 +93,10 @@ public class LyricsPage extends AppCompatActivity {
         // While Loop to collect data
         while (cursor.moveToNext()) {
             int id = cursor.getInt(cursor.getColumnIndex("_id"));
-            Log.d("TAG", "ID :" + id);
+
+            // Adds the id into an array for deleting purposes
             arrayid.add(id);
-            Log.d("ARRAY", "ID :" + arrayid);
+
             String SongTitle = cursor.getString(cursor.getColumnIndex("songtitle"));
             String lyricsText = cursor.getString(cursor.getColumnIndex("lyricstext"));
             lyrics.add(id +". " + SongTitle + " -  \n" + lyricsText);
