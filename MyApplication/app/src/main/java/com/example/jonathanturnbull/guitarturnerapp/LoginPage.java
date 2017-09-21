@@ -44,35 +44,29 @@ public class LoginPage extends AppCompatActivity {
         passWord = (EditText) findViewById(R.id.editText_userPassword);
 
 
-        login.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (username.length() >= 8 && passWord.length() >= 8) {
-                    // get Text from form elements
-                    username.getText();
-                    passWord.getText();
-
-                    // Hash password to a 32 bit string
-                    hasher = md5(passWord.toString());
-
-                    // fetch the Password form database for respective user name
-                    String storedPassword = myDBHelper.getDatabaseName(username);
-
-
-
-
-
-                    Log.d("HASHED", "HASHED PASSWORD = " + hasher);
-                } else {
-                    Context context = getApplicationContext();
-                    CharSequence text = "No such username or password";
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-
-                }
-            }
-        });
+//        login.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                if (username.length() >= 8 && passWord.length() >= 8) {
+//                    // get Text from form elements
+//                    username.getText();
+//                    passWord.getText();
+//
+//                    // Hash password to a 32 bit string
+//                    hasher = md5(passWord.toString());
+//
+//
+//                    Log.d("HASHED", "HASHED PASSWORD = " + hasher);
+//                } else {
+//                    Context context = getApplicationContext();
+//                    CharSequence text = "No such username or password";
+//                    int duration = Toast.LENGTH_SHORT;
+//
+//                    Toast toast = Toast.makeText(context, text, duration);
+//                    toast.show();
+//
+//                }
+//            }
+//        });
     }
 
 
