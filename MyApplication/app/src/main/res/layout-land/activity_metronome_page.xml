@@ -13,7 +13,7 @@
         android:contentDescription="@string/metronomeicon"
         app:srcCompat="@mipmap/tunericon" />
 
-    <Switch
+    <ToggleButton
         android:id="@+id/switch_Metro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
