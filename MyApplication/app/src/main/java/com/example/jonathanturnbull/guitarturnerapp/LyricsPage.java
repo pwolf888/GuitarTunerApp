@@ -30,6 +30,8 @@ import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.COLUMN_ID_LY
 
 public class LyricsPage extends AppCompatActivity {
 
+
+    // Declare variables
     public static final String TABLE_LYRICS = "lyrics";
     DBHelper myDBHelper;
     Button saveButton;
@@ -40,15 +42,13 @@ public class LyricsPage extends AppCompatActivity {
     int position;
     Cursor cursor;
 
-
+    // Collumns of my database
     String[] allColumns = new String[] { "_id", "songTitle", "lyricstext" };
 
     @Override
     protected void onCreate(Bundle savedInstancedState) {
         super.onCreate(savedInstancedState);
         setContentView(R.layout.activity_lyrics_page);
-
-
 
         // Create the Database
         myDBHelper = new DBHelper(this);
@@ -57,7 +57,7 @@ public class LyricsPage extends AppCompatActivity {
         saveButton = (Button) findViewById(R.id.button_addLyrics);
 
         // Delete Button
-//        deleteButton = (Button) findViewById(R.id.Button_remove);
+        //deleteButton = (Button) findViewById(R.id.Button_remove);
 
 //        deleteButton.setOnClickListener( new View.OnClickListener()  {
 //            @Override
@@ -75,6 +75,7 @@ public class LyricsPage extends AppCompatActivity {
         songTitle = (EditText) findViewById(R.id.editText_songTitle);
         lyrics = (EditText) findViewById(R.id.editText_lyrics);
 
+        // Inserts text from the Edit text views into the lyrics database
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,13 +84,12 @@ public class LyricsPage extends AppCompatActivity {
             }
         });
 
-
-
         displayLyrics();
-
     }
 
+    // Function to get all lyrics from the database
     public List<String> getAllLyrics() {
+
         // Add the array list
         List<String> lyrics = new ArrayList<String>();
 
@@ -98,7 +98,6 @@ public class LyricsPage extends AppCompatActivity {
 
         // Create cursor adapter
         cursor = db.query(TABLE_LYRICS, allColumns, null, null, null, null, null);
-
 
         // While Loop to collect data
         while (cursor.moveToNext()) {
@@ -112,23 +111,22 @@ public class LyricsPage extends AppCompatActivity {
 
     }
 
+    // Pushes the data into a list Adapter
     void displayLyrics() {
         // Use the list from getAllLyrics list
         List <String> values = getAllLyrics();
 
         // If the data is not null push it into an array adapter
         if( values != null) {
-//            ArrayAdapter<String> adapter = new ArrayAdapter<String> (this,
-//                    android.R.layout.simple_list_item_1, values);
-//            listView.setAdapter(adapter);
-
             LyricsListAdapter adapter = new LyricsListAdapter(this, values);
+
             // Load the adapter to list view
             listView.setAdapter(adapter);
         }
 
     }
 
+    // Funciton ot insert values into the database
     public void insert(String songTitle, String lyrics) {
         ContentValues values = new ContentValues();
         values.put("songtitle", songTitle);
@@ -137,6 +135,7 @@ public class LyricsPage extends AppCompatActivity {
         db.insert(TABLE_LYRICS, null, values);
     }
 
+    // Create my menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -144,29 +143,34 @@ public class LyricsPage extends AppCompatActivity {
         return true;
     }
 
-
+    // Moves the user back to the Tunerpage
     public void goHome(MenuItem item) {
         Intent intent = new Intent(this, TunerPage.class);
         startActivity(intent);
     }
 
+    // Moves the user to the login page
     public void logOut(MenuItem item) {
         Intent intent = new Intent(this, LoginPage.class);
         startActivity(intent);
     }
 
+    // Removes a row from the listview and database
     public void clearRow(View view) {
+
         // Get Database
         SQLiteDatabase db = myDBHelper.getReadableDatabase();
 
         // Create cursor and find the minimum Column ID
         // https://stackoverflow.com/questions/4890616/get-minimum-from-sqlite-database-column
         // Author: Corey Sunwold
+        // Uses the minimum value to get the first ID of the lyrics table
         cursor = db.query(TABLE_LYRICS, new String[] { "min(" + COLUMN_ID_LYRICS + ")" }, null, null,
                 null, null, null);
 
         // Move to the first position
         cursor.moveToFirst();
+
         // An int that stores the first position in the index
         int rowId = cursor.getInt(0);
 
@@ -176,18 +180,17 @@ public class LyricsPage extends AppCompatActivity {
         View parentRow = (View) view.getParent();
         ListView listView = (ListView) parentRow.getParent();
         position = listView.getPositionForView(parentRow);
-        Log.d("POSANDROW", "pos: " + position + "+ rowid:" + rowId);
-        position += rowId;
-        Log.d("POSANDROW", "pos: " + position + "+ rowid:" + rowId);
 
+        // Add the position to the rowId
+        position += rowId;
+
+        // Remove the value from the database and redraw it to the screen
         SQLiteDatabase db2 = myDBHelper.getWritableDatabase();
         db2.execSQL("DELETE FROM " + TABLE_LYRICS + " WHERE " + COLUMN_ID_LYRICS + "='"+ position +"'");
         db2.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + TABLE_LYRICS + "'");
         db2.close();
 
         displayLyrics();
-
-        //Log.d("PRESSED", "i have been pressed" + position);
     }
 
 

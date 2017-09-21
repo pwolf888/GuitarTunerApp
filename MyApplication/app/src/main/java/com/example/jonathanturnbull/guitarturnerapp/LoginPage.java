@@ -39,6 +39,8 @@ public class LoginPage extends AppCompatActivity {
 
         // Create the Database
         myDBHelper = new DBHelper(this);
+
+        // Declare my elements by id
         login = (Button) findViewById(R.id.button_Login);
         username = (EditText) findViewById(R.id.editText_username);
         passWord = (EditText) findViewById(R.id.editText_userPassword);
@@ -91,11 +93,13 @@ public class LoginPage extends AppCompatActivity {
     }
     // End of borrowed code //
 
+    // Move to the Tuner page
     public void goToFrontpage(View view) {
         Intent intent = new Intent(this, TunerPage.class);
         startActivity(intent);
     }
 
+    // Move to the registration page
     public void goToRegisterPage(View view) {
         Intent intent = new Intent(this, RegisterPage.class);
         startActivity(intent);

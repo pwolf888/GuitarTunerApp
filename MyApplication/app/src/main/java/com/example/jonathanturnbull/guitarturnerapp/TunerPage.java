@@ -15,9 +15,6 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
     // Declare variables
     Button E, A, D, G, B, e;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +46,7 @@ public class TunerPage extends AppCompatActivity implements View.OnClickListener
 
 
     public void onClick(View v) {
-        // Create mediaplayer
+        // Create mediaplayer to play E A D G B e sounds
         MediaPlayer lowEsound = MediaPlayer.create(this, R.raw.lowesound);
         MediaPlayer aSound = MediaPlayer.create(this, R.raw.asound);
         MediaPlayer dSound = MediaPlayer.create(this, R.raw.dsound);

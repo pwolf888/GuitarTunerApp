@@ -18,13 +18,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.security.MessageDigest;
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.example.jonathanturnbull.guitarturnerapp.DBHelper.TABLE_USERDATA;
 
 public class RegisterPage extends AppCompatActivity {
 
+    // Declare variables
     public static final String TABLE_USERDATA = "userdata";
     String hasher = "";
     EditText username;
@@ -33,41 +30,50 @@ public class RegisterPage extends AppCompatActivity {
     Button register;
     DBHelper myDBHelper;
 
+    // Userdata table collumns
     String[] allColumns = new String[] { "_userid", "username", "password" };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
+
+        // Get the database
         myDBHelper = new DBHelper(this);
+
+        // Find the ids of the input elements
         username = (EditText) findViewById(R.id.userName);
         passWord = (EditText) findViewById(R.id.passWord);
         passWordc = (EditText) findViewById(R.id.passWordc);
         register = (Button) findViewById(R.id.Register);
 
-
+        // Hash the password if the username is 8 characters long and the password is too
         register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (username.length() == 8 && passWord.length() == 8) {
-                    // get Text from form elements
+
+                    // Get Text from form elements
                     username.getText();
                     passWord.getText();
 
                     // Hash password to a 32 bit string
                     hasher = md5(passWord.toString());
 
-                    // insert into my database
+                    // Insert into my database
                     insert(username.toString(), hasher);
 
-                    Log.d("HASHED", "HASHED PASSWORD = " + hasher);
+                    // Display a toast pop up to alert user the username and password have been saved
                     Context context = getApplicationContext();
                     CharSequence text = "Username and Password Saved!";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
+
                 } else {
+
+                    // Display toast if details are incorrect
                     Context context = getApplicationContext();
-                    CharSequence text = "No Hashing Error!";
+                    CharSequence text = "Username and password not saved!";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -80,6 +86,7 @@ public class RegisterPage extends AppCompatActivity {
 
     }
 
+    // Create menu items
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -99,6 +106,7 @@ public class RegisterPage extends AppCompatActivity {
 
     // https://stackoverflow.com/questions/3934331/how-to-hash-a-string-in-android
     // Author: Yuriy Lisenkov
+    // Hashes a password into a 32 bit string
     public static String md5(final String toEncrypt) {
         try {
             final MessageDigest digest = MessageDigest.getInstance("md5");
@@ -115,6 +123,7 @@ public class RegisterPage extends AppCompatActivity {
     }
     // End of borrowed code //
 
+    // Insert details into database
     public void insert(String username, String password) {
         ContentValues values = new ContentValues();
         values.put("username", username);

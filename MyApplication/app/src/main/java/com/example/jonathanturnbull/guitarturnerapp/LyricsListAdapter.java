@@ -19,6 +19,8 @@ import java.util.List;
  */
 
 public class LyricsListAdapter extends ArrayAdapter<String> {
+
+    // Declared variables
     private final Context context;
     private final List<String> values;
     DBHelper myDBHelper;
@@ -35,16 +37,17 @@ public class LyricsListAdapter extends ArrayAdapter<String> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater)
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         View rowView = inflater.inflate(R.layout.lyrics_list, parent, false);
 
-        // Link the widgets on the layout with the Java codes
+        // Link the widgets on the layout with my adapter class
         TextView id = (TextView) rowView.findViewById(R.id.label_lyric_id);
         TextView songTitle = (TextView) rowView.findViewById(R.id.label_lyric_title);
         TextView lyricsText = (TextView) rowView.findViewById(R.id.label_lyric_lyrics);
         Button removeButton = (Button) rowView.findViewById(R.id.Button_remove);
 
 
-        // Set the content of the text based on the values string in the main activity
+        // Set the content of the text based on the values string in the lyrics activity
         id.setText(values.get(position));
         //songTitle.setText(values.get(position));
         //lyricsText.setText(values.get(position));
