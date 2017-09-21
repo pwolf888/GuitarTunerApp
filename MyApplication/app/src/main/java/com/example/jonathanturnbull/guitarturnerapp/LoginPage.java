@@ -29,7 +29,7 @@ public class LoginPage extends AppCompatActivity {
     EditText username;
     EditText passWord;
     Button login;
-    String hasher = "";
+    //String hasher = "";
     DBHelper myDBHelper;
 
     @Override

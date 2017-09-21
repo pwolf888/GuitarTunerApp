@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="159dp"
         android:contentDescription="@string/metronomeicon"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@mipmap/tunericon" />
 
     <Switch
         android:id="@+id/switch_Metro"
